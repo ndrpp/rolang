@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+
+	"rolang/lexer"
 )
 
 const PROMPT = ">> "
@@ -18,7 +20,9 @@ func Start(in io.Reader, out io.Writer) {
 			return
 		}
 
-		io.WriteString(out, scanner.Text())
-		io.WriteString(out, "\n")
+		line := scanner.Text()
+		l := lexer.New(line)
+
+		fmt.Println(l.NextToken())
 	}
 }
