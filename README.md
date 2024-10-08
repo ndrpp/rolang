@@ -98,8 +98,9 @@ var result = add(5, 10)
 
 ## What could come next
 
-1. closures
-2. while loops, switch statements and other control flows
-3. classes
-3. language server and formatter 
-4. some other funky stuff
+- [ ] float numbers
+- [ ] closures
+- [ ] while loops, switch statements and other control flows
+- [ ] classes
+- [ ] language server and formatter 
+- [ ] some other funky stuff

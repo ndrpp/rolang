@@ -26,6 +26,9 @@ func TestNextToken(t *testing.T) {
     "foo bar"
     [1, 2]
     {"foo": "bar"}
+    pentru user in users {
+        print(user.name)
+    }
     `
 
 	tests := []struct {
@@ -103,6 +106,18 @@ func TestNextToken(t *testing.T) {
 		{token.STRING, "foo"},
 		{token.COLON, ":"},
 		{token.STRING, "bar"},
+		{token.RBRACE, "}"},
+		{token.FOR, "pentru"},
+		{token.IDENT, "user"},
+		{token.IN, "in"},
+		{token.IDENT, "users"},
+		{token.LBRACE, "{"},
+		{token.PRINT, "print"},
+		{token.LPAREN, "("},
+		{token.IDENT, "user"},
+		{token.DOT, "."},
+		{token.IDENT, "name"},
+		{token.RPAREN, ")"},
 		{token.RBRACE, "}"},
 	}
 

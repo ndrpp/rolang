@@ -38,6 +38,7 @@ const (
 	COMMA     = ","
 	SEMICOLON = ";"
 	COLON     = ":"
+	DOT       = "."
 
 	LPAREN   = "("
 	RPAREN   = ")"
@@ -54,6 +55,11 @@ const (
 	RETURN   = "RETURN"
 	TRUE     = "TRUE"
 	FALSE    = "FALSE"
+
+	FOR = "FOR"
+	IN  = "IN"
+
+	PRINT = "PRINT"
 
 	AND = "&&"
 	OR  = "||"
@@ -74,6 +80,9 @@ var keywords = map[string]TokenType{
 	"sau":       OR,
 	"increment": INCREMENT,
 	"decrement": DECREMENT,
+	"pentru":    FOR,
+	"in":        IN,
+	"print":     PRINT,
 }
 
 func LookupIdent(ident string) TokenType {
