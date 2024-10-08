@@ -7,24 +7,24 @@ import (
 )
 
 func TestNextToken(t *testing.T) {
-	input := `var five = 5;
-    var ten = 10;
+	input := `var five = 5
+    var ten = 10
     var add = fn(x, y) {
-        x + y;
-    };
-    var result = add(five, ten);
-    !-/*5;
-    5 < 10 > 5;
-    daca (5 < 10) {
-        ret adev;
-    } altfel {
-        ret fals;
+        x + y
     }
-    10 == 10;
-    10 != 9;
+    var result = add(five, ten)
+    !-/*5
+    5 < 10 > 5
+    daca 5 < 10 {
+        ret adev
+    } altfel {
+        ret fals
+    }
+    10 == 10
+    10 != 9
     "foobar"
     "foo bar"
-    [1, 2];
+    [1, 2]
     {"foo": "bar"}
     `
 
@@ -36,12 +36,10 @@ func TestNextToken(t *testing.T) {
 		{token.IDENT, "five"},
 		{token.ASSIGN, "="},
 		{token.INT, "5"},
-		{token.SEMICOLON, ";"},
 		{token.VAR, "var"},
 		{token.IDENT, "ten"},
 		{token.ASSIGN, "="},
 		{token.INT, "10"},
-		{token.SEMICOLON, ";"},
 		{token.VAR, "var"},
 		{token.IDENT, "add"},
 		{token.ASSIGN, "="},
@@ -55,9 +53,7 @@ func TestNextToken(t *testing.T) {
 		{token.IDENT, "x"},
 		{token.PLUS, "+"},
 		{token.IDENT, "y"},
-		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
-		{token.SEMICOLON, ";"},
 		{token.VAR, "var"},
 		{token.IDENT, "result"},
 		{token.ASSIGN, "="},
@@ -67,44 +63,35 @@ func TestNextToken(t *testing.T) {
 		{token.COMMA, ","},
 		{token.IDENT, "ten"},
 		{token.RPAREN, ")"},
-		{token.SEMICOLON, ";"},
 		{token.BANG, "!"},
 		{token.MINUS, "-"},
 		{token.SLASH, "/"},
 		{token.ASTERISK, "*"},
 		{token.INT, "5"},
-		{token.SEMICOLON, ";"},
 		{token.INT, "5"},
 		{token.LT, "<"},
 		{token.INT, "10"},
 		{token.GT, ">"},
 		{token.INT, "5"},
-		{token.SEMICOLON, ";"},
 		{token.IF, "daca"},
-		{token.LPAREN, "("},
 		{token.INT, "5"},
 		{token.LT, "<"},
 		{token.INT, "10"},
-		{token.RPAREN, ")"},
 		{token.LBRACE, "{"},
 		{token.RETURN, "ret"},
 		{token.TRUE, "adev"},
-		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
 		{token.ELSE, "altfel"},
 		{token.LBRACE, "{"},
 		{token.RETURN, "ret"},
 		{token.FALSE, "fals"},
-		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
 		{token.INT, "10"},
 		{token.EQ, "=="},
 		{token.INT, "10"},
-		{token.SEMICOLON, ";"},
 		{token.INT, "10"},
 		{token.NOT_EQ, "!="},
 		{token.INT, "9"},
-		{token.SEMICOLON, ";"},
 		{token.STRING, "foobar"},
 		{token.STRING, "foo bar"},
 		{token.LBRACKET, "["},
@@ -112,7 +99,6 @@ func TestNextToken(t *testing.T) {
 		{token.COMMA, ","},
 		{token.INT, "2"},
 		{token.RBRACKET, "]"},
-		{token.SEMICOLON, ";"},
 		{token.LBRACE, "{"},
 		{token.STRING, "foo"},
 		{token.COLON, ":"},
