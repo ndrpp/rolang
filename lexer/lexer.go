@@ -42,6 +42,46 @@ func (l *Lexer) NextToken() token.Token {
 		} else {
 			tok = newToken(token.ASSIGN, l.ch)
 		}
+	case '+':
+		if l.peekChar() == '+' {
+			ch := l.ch
+			l.readChar()
+			literal := string(ch) + string(l.ch)
+			tok = token.Token{Type: token.INCREMENT, Literal: literal}
+		} else if l.peekChar() == '=' {
+			ch := l.ch
+			l.readChar()
+			literal := string(ch) + string(l.ch)
+			tok = token.Token{Type: token.PLUS_EQ, Literal: literal}
+		} else {
+			tok = newToken(token.PLUS, l.ch)
+		}
+	case '-':
+		if l.peekChar() == '-' {
+			ch := l.ch
+			l.readChar()
+			literal := string(ch) + string(l.ch)
+			tok = token.Token{Type: token.DECREMENT, Literal: literal}
+		} else if l.peekChar() == '=' {
+			ch := l.ch
+			l.readChar()
+			literal := string(ch) + string(l.ch)
+			tok = token.Token{Type: token.MINUS_EQ, Literal: literal}
+		} else {
+			tok = newToken(token.MINUS, l.ch)
+		}
+	case '/':
+		tok = newToken(token.SLASH, l.ch)
+
+	case '!':
+		if l.peekChar() == '=' {
+			ch := l.ch
+			l.readChar()
+			literal := string(ch) + string(l.ch)
+			tok = token.Token{Type: token.NOT_EQ, Literal: literal}
+		} else {
+			tok = newToken(token.BANG, l.ch)
+		}
 
 	case '(':
 		tok = newToken(token.LPAREN, l.ch)

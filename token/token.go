@@ -64,8 +64,12 @@ const (
 	AND = "&&"
 	OR  = "||"
 
+	// Postfix operators
 	INCREMENT = "++"
 	DECREMENT = "--"
+
+	PLUS_EQ  = "+="
+	MINUS_EQ = "-="
 )
 
 var keywords = map[string]TokenType{
