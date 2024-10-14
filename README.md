@@ -10,8 +10,8 @@ are used to name variables, table fields, and labels.
 
 The following keywords are reserved and cannot be used as names:
 
-*daca*, *altfel*, *var*, *adev*, *fals*, *fn*, *ret*, *si*, *sau*, *increment*,
-*decrement*
+*dacă*, *altfel*, *var*, *adevărat*, *fals*, *fn*, *returnează*, *și*, *sau*, *incrementează*,
+*decrementează*, *pentru {} în*, *afișează*
 
 ## Variables
 
@@ -32,18 +32,18 @@ int, bool, string, array, object, nil
 If statements:
 
 ```
-daca 5 < 10 {
-    ret adev
+dacă 5 < 10 {
+    returnează adevărat
 } altfel {
-    ret fals
+    returnează fals
 }
 ```
 
 For statements:
 
 ```
-pentru user in users {
-    print(user.name)
+pentru user în users {
+    afișează(user.name)
 }
 ```
 
@@ -78,12 +78,12 @@ Coming in a future version.
 
 ## Logical Operators
 
-- si: AND
+- și: AND
 - sau: OR
 
 ## Builtins
 
-- concat: string concatenation
+- concatenează: string concatenation
 - lungime: string & array length
 
 ## Functions
