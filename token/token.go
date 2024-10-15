@@ -75,18 +75,18 @@ const (
 var keywords = map[string]TokenType{
 	"fn":            FUNCTION,
 	"var":           VAR,
-	"dacă":          IF,
+	"daca":          IF,
 	"altfel":        ELSE,
-	"returnează":    RETURN,
-	"adevărat":      TRUE,
+	"returneaza":    RETURN,
+	"adevarat":      TRUE,
 	"fals":          FALSE,
-	"și":            AND,
+	"si":            AND,
 	"sau":           OR,
-	"incrementează": INCREMENT,
-	"decrementează": DECREMENT,
+	"incrementeaza": INCREMENT,
+	"decrementeaza": DECREMENT,
 	"pentru":        FOR,
-	"în":            IN,
-	"afișează":      PRINT,
+	"in":            IN,
+	"afiseaza":      PRINT,
 }
 
 func LookupIdent(ident string) TokenType {
