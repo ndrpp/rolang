@@ -10,8 +10,8 @@ are used to name variables, table fields, and labels.
 
 The following keywords are reserved and cannot be used as names:
 
-*dacă*, *altfel*, *var*, *adevărat*, *fals*, *fn*, *returnează*, *și*, *sau*, *incrementează*,
-*decrementează*, *pentru {} în*, *afișează*
+*daca*, *altfel*, *var*, *adevarat*, *fals*, *fn*, *returneaza*, *si*, *sau*, *incrementeaza*,
+*decrementeaza*, *pentru {} in*, *afiseaza*
 
 ## Variables
 
@@ -32,18 +32,18 @@ int, bool, string, array, object, nil
 If statements:
 
 ```
-dacă 5 < 10 {
-    returnează adevărat
+daca 5 < 10 {
+    returneaza adevarat
 } altfel {
-    returnează fals
+    returneaza fals
 }
 ```
 
 For statements:
 
 ```
-pentru user în users {
-    afișează(user.name)
+pentru user in users {
+    afiseaza(user.name)
 }
 ```
 
