@@ -15,10 +15,10 @@ func TestNextToken(t *testing.T) {
     var result = add(five, ten)
     !-/*5
     5 < 10 > 5
-    dacă 5 < 10 {
-        returnează adevărat
+    daca 5 < 10 {
+        returneaza adevarat
     } altfel {
-        returnează fals
+        returneaza fals
     }
     10 == 10
     10 != 9
@@ -26,15 +26,15 @@ func TestNextToken(t *testing.T) {
     "foo bar"
     [1, 2]
     {"foo": "bar"}
-    pentru user în users {
-        afișează(user.name)
+    pentru user in users {
+        afiseaza(user.name)
     }
     i++
     j--
     k += 1
     l -= 5
     5 - 1
-    !adevărat
+    !adevarat
     `
 
 	tests := []struct {
@@ -82,17 +82,17 @@ func TestNextToken(t *testing.T) {
 		{token.INT, "10"},
 		{token.GT, ">"},
 		{token.INT, "5"},
-		{token.IF, "dacă"},
+		{token.IF, "daca"},
 		{token.INT, "5"},
 		{token.LT, "<"},
 		{token.INT, "10"},
 		{token.LBRACE, "{"},
-		{token.RETURN, "returnează"},
-		{token.TRUE, "adevărat"},
+		{token.RETURN, "returneaza"},
+		{token.TRUE, "adevarat"},
 		{token.RBRACE, "}"},
 		{token.ELSE, "altfel"},
 		{token.LBRACE, "{"},
-		{token.RETURN, "returnează"},
+		{token.RETURN, "returneaza"},
 		{token.FALSE, "fals"},
 		{token.RBRACE, "}"},
 		{token.INT, "10"},
@@ -115,10 +115,10 @@ func TestNextToken(t *testing.T) {
 		{token.RBRACE, "}"},
 		{token.FOR, "pentru"},
 		{token.IDENT, "user"},
-		{token.IN, "în"},
+		{token.IN, "in"},
 		{token.IDENT, "users"},
 		{token.LBRACE, "{"},
-		{token.PRINT, "afișează"},
+		{token.PRINT, "afiseaza"},
 		{token.LPAREN, "("},
 		{token.IDENT, "user"},
 		{token.DOT, "."},
@@ -131,12 +131,15 @@ func TestNextToken(t *testing.T) {
 		{token.DECREMENT, "--"},
 		{token.IDENT, "k"},
 		{token.PLUS_EQ, "+="},
+		{token.INT, "1"},
 		{token.IDENT, "l"},
 		{token.MINUS_EQ, "-="},
 		{token.INT, "5"},
+		{token.INT, "5"},
 		{token.MINUS, "-"},
+		{token.INT, "1"},
 		{token.BANG, "!"},
-		{token.TRUE, "adevărat"},
+		{token.TRUE, "adevarat"},
 	}
 
 	l := New(input)
